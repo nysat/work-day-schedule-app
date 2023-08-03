@@ -5,16 +5,16 @@ In addition the app uses real time so at any given point in the day it will disp
 
 The following image shows the web application's appearance and functionality: 
 
-![Alt text](./assets/images/schedulerpt1.png)
 ![Alt text](./assets/images/schedulerpt2.png)
+![Alt text](./assets/images/schedulerpt1.png)
+
 
 Deployed Application : https://nysat.github.io/work-day-schedule-app/
 
-## User Story
+## User Story 
 AS AN employee with a busy schedule
 I WANT to add important events to a daily planner
 SO THAT I can manage my time effectively
-```
 
 ## Acceptance Criteria
 GIVEN I am using a daily planner to create a schedule
@@ -30,7 +30,8 @@ WHEN I click the save button for that timeblock
 THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
-```
+
+
 ## License
 
 Licensed under the MIT license.
