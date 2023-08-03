@@ -1,26 +1,37 @@
 
-  const localeSettings = {};
-  dayjs.locale(localeSettings);
-  const currentHour = dayjs().format('H');
+const localeSettings = {};
+dayjs.locale(localeSettings);
+const currentHour = dayjs().format('H');
 
-  // Wait until the DOM is fully loaded before executing the code inside the function.
-  $(function () {
-    //this will change the hour blocks in the schedule depending on what time it is.
-    function colorSwitch() {
-      $('.time-block').each(function () {
-        const hourBlock = parseInt(this.id);
-        $(this).toggleClass ('past', hourBlock < currentHour);
-        $(this).toggleClass ('present', hourBlock === currentHour);
-        $(this).toggleClass ('future', hourBlock > currentHour);
-      });
-    }
-    function desiredActivity() {
-      
-    }
+// Wait until the DOM is fully loaded before executing the code inside the function.
+$(function () {
+  //this will change the hour blocks in the schedule depending on what time it is.
+  function colorSwitch() {
+    $('.time-block').each(function () {
+      const hourBlock = parseInt(this.id);
+      $(this).toggleClass('past', hourBlock < currentHour);
+      $(this).toggleClass('present', hourBlock === currentHour);
+      $(this).toggleClass('future', hourBlock > currentHour);
+    });
+  }
+  function colorHourSwitch() {
+    $('.time-block').each(function () {
+      const hourBlock = parseInt(this.id);
+      if (hourBlock === currentHour) {
+        $(this).removeClass('past future').addClass('present');
+      } else if (hourBlock < currentHour) {
+        $(this).removeClass('future present').addClass('past');
+      } else  { (hourBlock > currentHour) 
+        $(this).removeClass('past present').addClass('future');
+      }
+    });
+
+  }
+colorSwitch ();
+colorHourSwitch();
 
 
-
-  });
+});
 
 
 
