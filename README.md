@@ -12,11 +12,16 @@ The following image shows the web application's appearance and functionality:
 Deployed Application : https://nysat.github.io/work-day-schedule-app/
 
 ## User Story 
+
+```
 AS AN employee with a busy schedule
 I WANT to add important events to a daily planner
 SO THAT I can manage my time effectively
+```
 
 ## Acceptance Criteria
+
+```
 GIVEN I am using a daily planner to create a schedule
 WHEN I open the planner
 THEN the current day is displayed at the top of the calendar
@@ -30,7 +35,7 @@ WHEN I click the save button for that timeblock
 THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
-
+```
 
 ## License
 
