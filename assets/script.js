@@ -3,7 +3,6 @@ const localeSettings = {};
 dayjs.locale(localeSettings);
 const currentHour = dayjs().format('H');
 
-// Wait until the DOM is fully loaded before executing the code inside the function.
 $(function () {
   //this will change the hour blocks in the schedule depending on what time it is.
   function colorSwitch() {
@@ -41,12 +40,21 @@ $(function () {
     const value = localStorage.getItem(key);
     $(this).children('.description').val(value);
   })
-
+  //gets date and time onto the header
+  function headerTime () {
+    const dateElem = $('#date')
+    const timeElem = $('#time')
+    const currentDate = dayjs().format ('dddd, MMMM D, YYYY')
+    const currentTime = dayjs().format ('hh:mm:ss')
+    dateElem.text (currentDate);
+    timeElem.text (currentTime);
+  }
 
 colorSwitch ();
 colorHourSwitch();
 saveText();
 
+setInterval (headerTime, 1000);
 
 });
 
