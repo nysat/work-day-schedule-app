@@ -27,8 +27,25 @@ $(function () {
     });
 
   }
+  //saving users input to local storage when clicking save button 
+  function saveText () {
+    $('.saveBtn').on('click', function() {
+      const key = $(this).parent () .attr('id');
+      const value = $(this).siblings ('.description') .val();
+      localStorage.setItem(key, value);
+    });
+
+  }
+  $('.time-block').each(function() {
+    const key = $(this).attr('id');
+    const value = localStorage.getItem(key);
+    $(this).children('.description').val(value);
+  })
+
+
 colorSwitch ();
 colorHourSwitch();
+saveText();
 
 
 });
